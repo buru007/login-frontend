@@ -1,103 +1,124 @@
-/* Global Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f7fc;
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: #333;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Main Container for Login and Signup */
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Auth Container */
 .auth-container {
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
-  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Heading for Auth Pages */
-h2 {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
+.auth-container:hover {
+  transform: scale(1.03);
+}
+
+/* Heading */
+.auth-container h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /* Input Fields */
-input[type="text"],
-input[type="password"],
-input[type="email"] {
+.auth-input {
   width: 100%;
   padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
+  border-radius: 8px;
   font-size: 16px;
-  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  transition: all 0.3s ease-in-out;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus {
-  border-color: #007bff;
+.auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.auth-button {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 12px 18px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
   outline: none;
 }
 
-/* Submit Button */
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+.auth-button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
 }
 
-button:hover {
-  background-color: #0056b3;
+.auth-button:active {
+  transform: translateY(1px);
 }
 
-/* Link Style for Signup / Login Switch */
-.auth-switch {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-.auth-switch a {
-  color: #007bff;
+/* Links */
+.auth-link {
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease-in-out;
 }
 
-.auth-switch a:hover {
-  text-decoration: underline;
+.auth-link:hover {
+  color: white;
 }
 
-/* Responsive Design for Mobile */
-@media (max-width: 600px) {
-  body {
-      padding: 10px;
-  }
-
+/* Responsive */
+@media (max-width: 500px) {
   .auth-container {
-      padding: 20px;
-      width: 100%;
+    padding: 30px;
   }
 
-  h2 {
-      font-size: 20px;
+  .auth-container h2 {
+    font-size: 22px;
   }
 
-  button {
-      font-size: 14px;
+  .auth-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .auth-button {
+    font-size: 16px;
+    padding: 10px 15px;
   }
 }
