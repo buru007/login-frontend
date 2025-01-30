@@ -28,6 +28,7 @@ const Login = ({ onLogin }) => {
           value={formData.email}
           onChange={handleChange}
           required
+          aria-label="Enter your email"
         />
 
         <label htmlFor="password">Password</label>
@@ -39,6 +40,7 @@ const Login = ({ onLogin }) => {
           value={formData.password}
           onChange={handleChange}
           required
+          aria-label="Enter your password"
         />
 
         <button type="submit">Login</button>
